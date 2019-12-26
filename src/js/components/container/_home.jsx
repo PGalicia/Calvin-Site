@@ -10,6 +10,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { printText } from "@reducer";
 
+import Banner from "@presentational/_banner.jsx";
+
 // Redux
 const mapStateToProps = state => ({
   printedText: state.printedText
@@ -45,25 +47,25 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2 id="home">Print some words</h2>
-        <h3>Forbidden Words: </h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.inputText}
-            placeholder="Enter a phrase to print"
-          />
-          <button type="submit">Print</button>
-        </form>
-        <h4>Result: {this.props.printedText}</h4>
+        <Banner />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          provident aut architecto odit ut, enim laudantium debitis doloremque
+          suscipit distinctio, saepe illum velit fugiat adipisci ducimus quam
+          fugit, laborum non! Consequuntur repudiandae incidunt eligendi harum
+          soluta autem doloremque nam, corrupti, amet illum doloribus eius
+          eveniet et suscipit recusandae ex unde officia non totam placeat
+          labore. Inventore explicabo veritatis saepe quod. Pariatur dolor rem
+          dolorum, explicabo nihil eveniet, aliquam dolore sunt maiores hic,
+          veritatis dolorem iure molestias vel. Reiciendis consequuntur,
+          voluptates animi quos illo, cumque corrupti accusamus, consequatur
+          distinctio dolorum nemo?
+        </p>
       </React.Fragment>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 // export default Home;

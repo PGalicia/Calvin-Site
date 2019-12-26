@@ -27,11 +27,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-            use: [
-                "style-loader", // creates style nodes from JS strings
-                "css-loader", // translates CSS into CommonJS
-                "sass-loader" // compiles Sass to CSS, using Node Sass by default
-            ]
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader", // compiles Sass to CSS, using Node Sass by default
+
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif|pdf)$/,
@@ -54,6 +55,7 @@ module.exports = {
       '@actionTypes': path.resolve(__dirname, 'src/js/redux/action-types.js'),
       '@store': path.resolve(__dirname, 'src/js/store/index.js'),
       '@scss': path.resolve(__dirname, 'src/scss/index.scss'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
     }
   },
   plugins: [
