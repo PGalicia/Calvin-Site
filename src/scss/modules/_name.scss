@@ -1,0 +1,29 @@
+@keyframes name-movement {
+  0% {
+    padding-top: 6rem;
+  }
+  100% {
+    padding-top: 4rem;
+  }
+}
+
+.name {
+  // @TODO: Ask Calvin the padding for this
+  // before and after transition
+  padding-top: 6rem;
+  // transition: padding-top 0.5s ease-in;
+
+  // @TODO: Ask Calvin the size for this name
+  width: 15rem;
+
+  // .name--project-list
+  &--project-list {
+    animation: 1s ease 0s name-movement;
+    padding-top: 4rem;
+  }
+
+  @include bp-phone {
+    .name--project-list {
+    }
+  }
+}

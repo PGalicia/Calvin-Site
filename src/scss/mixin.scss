@@ -1,0 +1,11 @@
+/*
+    File: _mixin.scss
+    Author: Patrick Galicia
+    Desc: Contains all mixin definition
+*/
+
+@mixin center-contentX($position: relative) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}

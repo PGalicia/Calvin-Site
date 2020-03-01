@@ -48,7 +48,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <Banner />
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
           provident aut architecto odit ut, enim laudantium debitis doloremque
           suscipit distinctio, saepe illum velit fugiat adipisci ducimus quam
@@ -60,7 +60,7 @@ class Home extends Component {
           veritatis dolorem iure molestias vel. Reiciendis consequuntur,
           voluptates animi quos illo, cumque corrupti accusamus, consequatur
           distinctio dolorum nemo?
-        </p>
+        </p> */}
       </React.Fragment>
     );
   }

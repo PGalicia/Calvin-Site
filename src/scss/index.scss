@@ -4,8 +4,9 @@
     Desc: Base styling file
 */
 
-@import "utils";
 @import "vars";
+@import "mixin";
+@import "utils";
 
 @import "base";
 @import "layout";

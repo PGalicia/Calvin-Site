@@ -1,5 +1,21 @@
 /*
-    File: _vars.scss
+    File: _utils.scss
     Author: Patrick Galicia
-    Desc: Contains all utility styles, which includes mixin, functions, etc
+    Desc: Contains all utility styles, functions, etc
 */
+
+// CENTER CONTENT
+.center-content--x {
+  @include center-contentX();
+}
+
+@mixin fit-content() {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@mixin bp-phone {
+  @media (max-width: 450px) {
+    @content;
+  }
+}

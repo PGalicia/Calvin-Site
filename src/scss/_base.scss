@@ -4,6 +4,11 @@
     Desc: Styles for the base html tags such as h1, p, and body. Should not contain any other selectors
 */
 
+html {
+  background-image: url(#{$assets_import}/tile.png);
+  background-size: 46.875rem 46.875rem;
+}
+
 html,
 body {
   margin: 0;
