@@ -9,13 +9,15 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "@container/_home.jsx";
 import ProjectList from "@container/_projectList.jsx";
+import Project from "@container/_project.jsx";
 
 const Main = props => {
   return (
     <main id="main">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/project" component={ProjectList} />
+        <Route exact path="/project/:id" component={Project} />
+        <Route exact path="/project" component={ProjectList} />
       </Switch>
     </main>
   );

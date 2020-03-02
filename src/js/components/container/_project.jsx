@@ -7,7 +7,7 @@
 
 import React, { Component } from "react";
 
-import nameImg from "@assets/name.png";
+import Name from "@presentational/_name.jsx";
 
 class Project extends Component {
   constructor(props) {
@@ -16,11 +16,10 @@ class Project extends Component {
 
   render() {
     return (
-      <img
-        className="name name--project-list center-content--x"
-        src={nameImg}
-      />
-      // <h1>Project List page</h1>
+      <React.Fragment>
+        <Name extraClassImage="name--project" />
+        <h1>Project</h1>
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+
+  &__cloud {
+    flex: 1;
+
+    img {
+      max-width: 28.75rem;
+      position: fixed;
+      bottom: 0;
+    }
+
+    &--right img {
+      right: 0;
+    }
+  }
+
+  // &__cloud--right {
+  //   // position: absolute;
+  //   // right: 0;
+  // }
+}

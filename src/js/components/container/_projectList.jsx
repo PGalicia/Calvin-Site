@@ -6,8 +6,9 @@
 */
 
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import nameImg from "@assets/name.png";
+import Name from "@presentational/_name.jsx";
 
 class ProjectList extends Component {
   constructor(props) {
@@ -17,13 +18,14 @@ class ProjectList extends Component {
   render() {
     return (
       <React.Fragment>
-        <img
-          className="name name--project-list center-content--x"
-          src={nameImg}
-        />
+        <Name />
         <h1>Project List page</h1>
         <ul>
-          <li>Project1</li>
+          <li>
+            <Link className="banner__route center-content--x" to="/project/1">
+              To project 1
+            </Link>
+          </li>
         </ul>
       </React.Fragment>
     );
