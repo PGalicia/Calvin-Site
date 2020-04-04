@@ -8,18 +8,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Images
-import nameImg from "@assets/name.png";
+import nameImg from "@assets/name.svg";
 
 const Name = props => {
   let link = props.link || "/";
   let extraClassImage = props.extraClassImage || "";
   return (
-    <Link to={link}>
-      <img
-        className={"name center-content--x " + extraClassImage}
-        src={nameImg}
-      />
-    </Link>
+    <img
+      className={"name " + extraClassImage}
+      src={nameImg}
+    />
   );
 };
 

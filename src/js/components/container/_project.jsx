@@ -8,6 +8,7 @@
 import React, { Component } from "react";
 
 import Name from "@presentational/_name.jsx";
+import Footer from "@presentational/_footer.jsx";
 
 class Project extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Project extends Component {
       <React.Fragment>
         <Name extraClassImage="name--project" />
         <h1>Project</h1>
+        <Footer extraClassImage="footer--project" />
       </React.Fragment>
     );
   }

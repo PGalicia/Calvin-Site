@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { printText } from "@reducer";
 
 import Banner from "@presentational/_banner.jsx";
+import ProjectList from "@presentational/_projectList.jsx";
 
 // Redux
 const mapStateToProps = state => ({
@@ -48,6 +49,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <Banner />
+        <ProjectList />
         {/* <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
           provident aut architecto odit ut, enim laudantium debitis doloremque

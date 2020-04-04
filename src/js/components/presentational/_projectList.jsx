@@ -9,6 +9,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Name from "@presentational/_name.jsx";
+import Footer from "@presentational/_footer.jsx";
 
 class ProjectList extends Component {
   constructor(props) {
@@ -17,17 +18,17 @@ class ProjectList extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Name />
-        <h1>Project List page</h1>
+      <section id="test" className="project-list">
+        {/* <Name /> */}
+        <p className="project-list__label">I am a user experience designer from southern california</p>
         <ul>
-          <li>
-            <Link className="banner__route center-content--x" to="/project/1">
-              To project 1
-            </Link>
-          </li>
+          <li>To project 1</li>
+          <li>To project 2</li>
+          <li>To project 3</li>
+          <li>To project 4</li>
         </ul>
-      </React.Fragment>
+        {/* <Footer extraClassImage="footer--list" /> */}
+      </section>
     );
   }
 }

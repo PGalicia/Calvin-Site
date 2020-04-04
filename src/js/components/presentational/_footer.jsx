@@ -12,8 +12,9 @@ import cloudLeftImg from "@assets/clouds-left.png";
 import cloudRightImg from "@assets/clouds-right.png";
 
 const Footer = props => {
+  let extraClassImage = props.extraClassImage || "";
   return (
-    <footer className="footer">
+    <footer className={"footer " + extraClassImage}>
       <div className="footer__cloud footer__cloud--left">
         <img src={cloudLeftImg} />
       </div>

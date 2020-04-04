@@ -1,0 +1,9 @@
+.project-list {
+  background-color: skyblue;
+  display: grid;
+  justify-items: center;
+  padding: 100px;
+  box-sizing: border-box;
+
+  &__label { text-align: center; }
+}

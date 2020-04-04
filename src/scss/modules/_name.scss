@@ -1,42 +1,8 @@
-$name_padding_top_big: 6rem;
-$name_padding_top_small: 4rem;
-
-$name_width_big: 15rem;
-$name_width_small: 10rem;
-
-@keyframes name-movement {
-  0% {
-    padding-top: $name_padding_top_big;
-    width: $name_width_big;
-  }
-  100% {
-    padding-top: $name_padding_top_small;
-    width: $name_width_small;
-  }
-}
-
 .name {
   // @TODO: Ask Calvin the padding for this
   // before and after transition
-  padding-top: $name_padding_top_big;
+  // padding-top: $name_padding_top_big;
 
   // @TODO: Ask Calvin the size for this name
-  width: $name_width_big;
-
-  // .name--home
-  &--home {
-    animation: 0.5s ease 0s name-movement reverse;
-  }
-
-  // .name--project
-  &--project {
-    animation: 0.5s ease 0s name-movement;
-    padding-top: $name_padding_top_small;
-    width: $name_width_small;
-  }
-
-  @include bp-phone {
-    .name--project-list {
-    }
-  }
+  width: 150px;
 }

@@ -3,6 +3,16 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  
+  background-color: palevioletred;
+
+  // @TODO: Need to do this
+  padding: 100px 0 200px;
+  box-sizing: border-box;
+
+  display: grid;
+  justify-items: center;
+
 
   // // .banner__name
   // &__name {
@@ -13,15 +23,17 @@
   &__route {
     display: block;
     @include fit-content();
+    align-self: end;
+    // position: absolute;
+    // padding-bottom: inherit;
+    // bottom: 0;
   }
 
-  //   &__profile {
-  //     width: 400px;
-  //     position: absolute;
-  //     left: 50%;
-  //     top: 50%;
-  //     transform: translate(-50%, -50%);
-  //   }
+  &__profile {
+    width: 200px;
+    display: block;
+    align-self: center;
+  }
 
   //   &__profile,
   //   &__light,
