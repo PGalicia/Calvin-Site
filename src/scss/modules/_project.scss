@@ -2,8 +2,18 @@
   background-color: skyblue;
   display: grid;
   justify-items: center;
-  padding: 100px;
+  padding: 150px 50px 100px;
   box-sizing: border-box;
 
-  &__label { text-align: center; }
+  min-height: 100vh;
+
+  &__label {
+    // @todo Calvin said the font-size is 32px but that seems too big
+    font-size: 20px;
+
+    mark {
+      color: white; 
+      background-color: red;
+    }
+  }
 }

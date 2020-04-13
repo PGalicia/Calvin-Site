@@ -4,15 +4,20 @@
     Desc: Base Redux file. Redux actions and reducers must be defined here
 */
 
-import { PRINT_TEXT } from "@actionTypes";
+import {
+    PRINT_TEXT,
+    TOGGLE_NAME_SIZE
+} from "@actionTypes";
 
 // Actions
 export const printText = text => ({ type: PRINT_TEXT, payload: text });
+export const toggleNameSize = bool => ({ type: TOGGLE_NAME_SIZE, payload: bool });
 
 // Reducers
 // Contains initial state of listed elements
 const initialState = {
-    printedText: "Hello World"
+    printedText: "Hello World",
+    isProjectListInView: false
 }
 
 // Root Reducer
@@ -20,6 +25,8 @@ const rootReducer = (state = initialState, action) => {
     switch(action.type) {
         case PRINT_TEXT:
             return { ...state, printedText: action.payload }
+        case TOGGLE_NAME_SIZE:
+            return { ...state, isProjectListInView: action.payload }
         default:
             return state;
     }

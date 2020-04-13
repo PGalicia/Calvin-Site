@@ -5,4 +5,15 @@
 
   // @TODO: Ask Calvin the size for this name
   width: 150px;
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: width 0.4s ease-out, top 0.4s ease-out;
+
+  &--small {
+    top: 5%;
+    width: 125px;
+  }
 }

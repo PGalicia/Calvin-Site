@@ -6,3 +6,4 @@
 
 // ActionTypes
 export const PRINT_TEXT = "PRINT_TEXT";
+export const TOGGLE_NAME_SIZE = "TOGGLE_NAME_SIZE";
