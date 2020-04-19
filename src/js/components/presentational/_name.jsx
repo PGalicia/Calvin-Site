@@ -13,13 +13,13 @@ import nameImg from "@assets/name.svg";
 
 // Redux
 const mapStateToProps = state => ({
-  isProjectListInView: state.isProjectListInView
+  isInProjectView: state.isInProjectView
 });
 
 const Name = props => {
   let link = props.link || "/";
   let extraClass = props.extraClass || "";
-  let isNameSmall = props.isProjectListInView ? "name name--small" : "name";
+  let isNameSmall = props.isInProjectView ? "name name--small" : "name";
   return (
     <img
       className={isNameSmall + " " + extraClass}

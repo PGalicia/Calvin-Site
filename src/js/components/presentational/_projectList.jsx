@@ -8,18 +8,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { toggleNameSize } from "@reducer";
+import { toggleNameSize, toggleAboutSection } from "@reducer";
 
-import Name from "@presentational/_name.jsx";
+// Components
 import Footer from "@presentational/_footer.jsx";
+import About from "@presentational/_about.jsx";
+
+// Images
+import cocktailButtonImg from "@assets/project-list-button/cocktail.svg";
+import craigslistButtonImg from "@assets/project-list-button/craigslist.svg";
+import empethyButtonImg from "@assets/project-list-button/empethy.svg";
+import hciButtonImg from "@assets/project-list-button/hci.svg";
+
 
 // Redux
 const mapStateToProps = state => ({
-  isProjectListInView: state.isProjectListInView
+  isAboutSectionShowing: state.isAboutSectionShowing
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleNameSize: bool => dispatch(toggleNameSize(bool))
+  toggleNameSize: bool => dispatch(toggleNameSize(bool)),
+  toggleAboutSection: bool => dispatch(toggleAboutSection(bool))
 });
 
 class ProjectList extends Component {
@@ -29,14 +38,11 @@ class ProjectList extends Component {
     this.container = React.createRef();
 
     this.onScoll = this.onScoll.bind(this);
+    this.toggleAboutView = this.toggleAboutView.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.onScoll, false);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll, false);
   }
 
   onScoll() {
@@ -54,7 +60,22 @@ class ProjectList extends Component {
     } else {
       this.props.toggleNameSize(false);
     }
+  }
 
+  toggleAboutView() {
+    let isAboutSectionShowing = !this.props.isAboutSectionShowing
+
+    if(isAboutSectionShowing) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    this.props.toggleAboutSection(!this.props.isAboutSectionShowing);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll, false);
   }
 
   render() {
@@ -64,17 +85,57 @@ class ProjectList extends Component {
         ref={this.container}
         className="project-list"
       >
-        {/* <Name /> */}
-        <p className="project-list__label">
-          I am a <mark>user experience designer</mark> from southern california
-        </p>
-        <ul>
-          <li>To project 1</li>
-          <li>To project 2</li>
-          <li>To project 3</li>
-          <li>To project 4</li>
-        </ul>
-        {/* <Footer extraClassImage="footer--list" /> */}
+
+        <div className="project-list__who" onClick={this.toggleAboutView}>who?</div>
+        
+        {this.props.isAboutSectionShowing === true &&
+          <div className="project-list__button" onClick={this.toggleAboutView}>back</div>
+        }
+
+        {this.props.isAboutSectionShowing === false &&
+
+          <React.Fragment>
+            <div className="project-list__content">
+              <p className="project-list__label">
+                I am a <mark>user experience designer</mark> from southern california
+              </p>
+              <ul className="project-list__projects">
+
+                {/* @TODO: Find a better way to load this -- make it dynamic */}
+                <li className="project-list__project">
+                  {/* <Link to="/project/1"> */}
+                    <img src={hciButtonImg} alt="Healthy Campus Initiative"/>
+                  {/* </Link> */}
+                </li>
+
+                <li className="project-list__project">
+                  {/* <Link to="/project/2"> */}
+                    <img src={cocktailButtonImg} alt="Cocktail Finder"/>
+                  {/* </Link> */}
+                </li>
+
+                <li className="project-list__project">
+                  {/* <Link to="/project/3"> */}
+                    <img src={empethyButtonImg} alt="Empethy"/>
+                  {/* </Link> */}
+                </li>
+
+                <li className="project-list__project">
+                  {/* <Link to="/project/4"> */}
+                    <img src={craigslistButtonImg} alt="Craigslist"/>
+                  {/* </Link> */}
+                </li>
+              </ul>
+            </div>
+
+            <Footer />
+          </React.Fragment>
+        }
+
+        {this.props.isAboutSectionShowing === true &&
+          <About />
+        }
+
       </section>
     );
   }

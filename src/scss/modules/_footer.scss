@@ -1,94 +1,61 @@
-@keyframes cloud-scale {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes cloud-scale--reverse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.95);
-  }
-}
-
-@keyframes cloud-movement {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.95);
-  }
-}
-
 .footer {
-  position: fixed;
-  z-index: 1000;
+  position: absolute;
+  // width: 140px;
+  width: 100%;
+  // background-color: palegreen;
   bottom: 0;
-  display: flex;
-  width: 100vw;
 
-  &__cloud {
-    flex: 1;
+  &__telescope {
+    position: absolute;
+    width: 140px;
+    bottom: -115px;
+    right: -35px;
+    transform: rotate(-20deg);
+    z-index: 1;
+  }
 
-    img {
-      bottom: -6rem;
-      position: relative;
-      height: 100%;
-    }
+  &__label {
+    position: absolute;
+    top: -28px;
+    // float: right;
+    background: red;
+    box-sizing: border-box;
 
-    &--left {
-      height: 358px;
+    // @TODO: I should set a max width here. I should address the situation on
+    // wide desktop
+    width: 60%;
+    padding: 0 10px;
+    color: white;
+    right: 0;
+    font-size: 25px;
 
-      img {
-        left: -4rem;
-        float: left;
-        transform-origin: bottom left;
-      }
-    }
+    transition: width 0.2s;
 
-    &--right {
-      height: 358px;
-      img {
-        right: -4rem;
-        float: right;
-        transform-origin: bottom right;
-      }
+    &--hide {
+      width: 0;
     }
   }
 
-  &--home {
-    .footer__cloud--left img,
-    .footer__cloud--right img {
-      animation: 0.5s ease 0s cloud-scale--reverse;
-      transform: scale(0.95);
-    }
-  }
+  // &__contact {
+  //   display: grid;
+  //   grid-template-columns: 161px 132px;
+  //   float: right;
+  // }
 
-  &--list {
-    .footer__cloud--left img,
-    .footer__cloud--right img {
-      animation: 0.5s ease 0s cloud-scale;
-      transform: scale(1.05);
-    }
-  }
+  &__list {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 20px 25px;
+    width: 161px;
+    position: absolute;
+    right: 105px;
+    top: -110px;
+    color: white;
+    transition: visibility 0.2s, opacity 0.2s;
 
-  &--project {
-    .footer__cloud--left img,
-    .footer__cloud--right img {
-      bottom: -9rem;
-    }
-
-    .footer__cloud--right img {
-      right: -9rem;
-    }
-
-    .footer__cloud--left img {
-      left: -11rem;
+    li {
+      // text-align: center;
+      margin-left: 40px
     }
   }
 }

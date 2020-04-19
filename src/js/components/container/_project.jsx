@@ -6,24 +6,33 @@
 */
 
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { toggleNameSize } from "@reducer";
 
 import Name from "@presentational/_name.jsx";
-import Footer from "@presentational/_footer.jsx";
+
+const mapDispatchToProps = dispatch => ({
+  toggleNameSize: bool => dispatch(toggleNameSize(bool))
+});
 
 class Project extends Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.toggleNameSize(true);
+    // this.props.history.push('/foo');
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Name extraClassImage="name--project" />
+        <Name />
         <h1>Project</h1>
-        <Footer extraClassImage="footer--project" />
       </React.Fragment>
     );
   }
 }
 
-export default Project;
+export default connect(null, mapDispatchToProps)(Project);

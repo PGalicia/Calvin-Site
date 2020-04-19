@@ -3,3 +3,19 @@
     Author: Patrick Galicia
     Desc: Contains all styling pertaining to a particular state of an element (ie color of button when pressed)
 */
+
+.display-none {
+  // display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.display-block {
+  // display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

@@ -4,27 +4,52 @@
     Desc: The clouds and the thinking gent
 */
 
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // Images
-import cloudLeftImg from "@assets/clouds-left.png";
-import cloudRightImg from "@assets/clouds-right.png";
+import telescopeManImg from "@assets/telescope-man.png";
+import contactBubbleImg from "@assets/contact-bubble.svg";
 
-const Footer = props => {
-  let extraClassImage = props.extraClassImage || "";
-  return (
-    <footer className={"footer " + extraClassImage}>
-      <div className="footer__cloud footer__cloud--left">
-        <img src={cloudLeftImg} />
-      </div>
-      {/* <div className="footer__cloud footer__cloud--left">left</div> */}
-      <div className="footer__cloud footer__cloud--right">
-        <img src={cloudRightImg} />
-      </div>
-      {/* <div className="footer__cloud footer__cloud--right">right</div> */}
-    </footer>
-  );
+class Footer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isContactListShowing: false
+    }
+
+    this.toggleContactList = this.toggleContactList.bind(this);
+  }
+
+  toggleContactList() {
+    this.setState({ isContactListShowing : !this.state.isContactListShowing });
+    // console.log('clikc');
+  }
+
+  render() {
+    const footerListContainerStyles = {
+      backgroundImage: `url(${contactBubbleImg})`
+    }
+
+    return (
+      <footer className="footer">
+        <ul className={`footer__list ${this.state.isContactListShowing ? "display-block" : "display-none"}`} style={footerListContainerStyles}>
+          <li>
+            <a href="https://www.facebook.com/rajredrobin" target="_blank">email</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/rajredrobin" target="_blank">instagram</a>  
+          </li>
+          <li>
+          <a href="https://www.facebook.com/rajredrobin" target="_blank">linkedin</a>
+          </li>
+        </ul>
+        <img className="footer__telescope" src={telescopeManImg} alt="Telescope Man" onClick={this.toggleContactList} />
+        <p className={`footer__label ${this.state.isContactListShowing ? "footer__label--hide" : "footer__label"}`}>contact me</p>
+      </footer>
+    );
+  }
 };
 
 export default Footer;

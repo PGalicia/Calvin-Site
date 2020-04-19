@@ -1,0 +1,48 @@
+.about {
+  position: absolute;
+  width: 100vw;
+  // min-height: 85%;
+  height: 100%;
+  background-color: transparent;
+  // top: 15%;
+  top: 0;
+  z-index: 100;
+  padding: 150px 50px 50px;
+  box-sizing: border-box;
+  font-size: 20px;
+  overflow: auto;
+
+  &__image {
+    // position: relative;
+    width: 225px;
+    height: 225px;
+    overflow: hidden;
+    padding: 50px 0;
+    margin: 0 auto;
+
+    > img {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+    }
+  }
+
+  &__list {
+
+    > p {
+      margin-bottom: 10px;
+    }
+
+    > ul {
+      list-style-type: disc;
+      padding-left: 35px;
+    }
+  }
+
+  // &__button {
+  //   position: absolute;
+  //   top: 35px;
+  //   left: 30px;
+  // }
+}
